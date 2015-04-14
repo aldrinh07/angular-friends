@@ -27,26 +27,26 @@
   <!--<input class="form-control" placeholder="Search Friends by Name" ng-model="searchTerm.name">-->
       <!--<input class="form-control" placeholder="Search Friends by Name" ng-model="searchTerm.name">-->
 
-    <input class="form-control" placeholder="Search Your Friends' Name" ng-model="searchTerm.name">
+    <input class="form-control" placeholder="Search Your Friends' Name" ng-model="searchText.name">
     <input class="form-control" placeholder="Search Your Freinds' Location" ng-model="searchTerm.current_location">
 
-    <select class="input-medium" ng-model="sortOn" ng-options="val as key for (key, val) in filterOpts">
+    <!--<select class="input-medium" ng-model="sortOn" ng-options="val as key for (key, val) in filterOpts">-->
         <!--<option value="name">Name</option>-->
         <!--<option value="friend_count"># friends</option>-->
         <!--<option value="current_location.city">City</option>-->
         <!--<option value="current_location.state">State</option>-->
         <!--<option value="current_location.country">Country</option>-->
-    </select>
-    <select class="input-medium" ng-model="desc">
-        <option value="false">Ascending</option>
-        <option value="true">Descending</option>
-    </select>
+    <!--</select>-->
+    <!--<select class="input-medium" ng-model="desc">-->
+        <!--<option value="false">Ascending</option>-->
+        <!--<option value="true">Descending</option>-->
+    <!--</select>-->
   </div>
 </form>
-
-  <ul ng-repeat="friend in friends | filter:searchTerm | orderBy:sortOn:desc">
+  <ul ng-repeat="friend in friends | filter:searchText | orderBy:sortOn:desc">
     <li class='friend'>
-       <img class="profile-pic" src={{friend.pic_square}}/>
+
+        <img class="profile-pic" src={{friend.pic_square}}/>
       <h3>{{friend.name}}</h3>
       <div class="location" ng-show="friend.current_location">
         Location: {{friend.current_location.city}}, {{friend.current_location.state}}, {{friend.current_location.country}}

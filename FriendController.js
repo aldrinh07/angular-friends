@@ -6,9 +6,9 @@ app.controller('FriendCtrl', function($scope, $http){
         $scope.friends = res.data;
         for(var i = 0; i < $scope.friends.length; i++){
             $scope.friends[i].friend_count = parseInt($scope.friends[i].friend_count) || 0;
-        };
+        }
+        console.log($scope.friends)
     });
-
 //    $scope.searchTerm = {};
 
     $scope.desc = "false";
